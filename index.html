@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NeuroLearn AI - Plataforma de Estudo Adaptativo</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- CABEÇALHO -->
+  <header>
+    <div class="logo">
+      <span>⚡</span> NeuroLearn AI
+    </div>
+    <nav>
+      <a href="#inicio">Início</a>
+      <a href="#recursos">Recursos</a>
+      <a href="#demo">Testar IA</a>
+    </nav>
+  </header>
+
+  <!-- SEÇÃO PRINCIPAL (HERO) -->
+  <section id="inicio" class="hero">
+    <h1>Aprenda mais rápido com Inteligência Artificial e Neurociência</h1>
+    <p>Uma plataforma inteligente que adapta o conteúdo de estudo ao seu ritmo de atenção e memória.</p>
+    <a href="#demo" class="btn-principal">Experimente o Protótipo</a>
+  </section>
+
+  <!-- RECURSOS DA PLATAFORMA -->
+  <section id="recursos" class="recursos">
+    <h2>Como ajudamos estudantes</h2>
+    <div class="cards-container">
+      <div class="card">
+        <h3>🧠 Neuro-Foco</h3>
+        <p>Ajuste dinâmico do tempo de leitura baseado em ciclos de fixação de memória.</p>
+      </div>
+      <div class="card">
+        <h3>🤖 Resumos Inteligentes</h3>
+        <p>A IA extrai os conceitos-chave de qualquer texto ou PDF em segundos.</p>
+      </div>
+      <div class="card">
+        <h3>📊 Aprendizagem Adaptativa</h3>
+        <p>Exercícios gerados automaticamente com base nas suas maiores dúvidas.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SIMULADOR INTERATIVO -->
+  <section id="demo" class="demo">
+    <h2>Testar Gerador de Resumos</h2>
+    <p>Cole um texto curto de estudo abaixo para ver a IA em ação:</p>
+    
+    <div class="demo-box">
+      <textarea id="textoInput" placeholder="Cole aqui o texto de estudo (ex: um parágrafo sobre redes de computadores ou neurociência)..."></textarea>
+      <button id="btnGerar" onclick="gerarResumo()">Gerar Resumo Adaptativo</button>
+      
+      <div id="resultado" class="resultado"></div>
+    </div>
+  </section>
+
+  <!-- RODAPÉ -->
+  <footer>
+    <p>Protótipo desenvolvido para o Hackathon Sintechtica 2026 🚀</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
