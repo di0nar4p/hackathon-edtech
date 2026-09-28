@@ -311,6 +311,46 @@ footer {
     color: #ffffff;
 }
 
+.demo-query {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 20px 0;
+}
+
+.demo-query input {
+    flex: 1;
+    min-width: 260px;
+    max-width: 480px;
+    background: #0d1117;
+    color: #c9d1d9;
+    border: 1px solid #30363d;
+    padding: 10px 14px;
+    border-radius: 6px;
+    font-size: 0.95rem;
+}
+
+.demo-query input:focus {
+    outline: none;
+    border-color: #58a6ff;
+}
+
+.demo-query button {
+    background: #238636;
+    color: #ffffff;
+    border: 1px solid #2ea043;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    transition: all 0.2s ease;
+}
+
+.demo-query button:hover {
+    background: #2ea043;
+}
+
 .mcp-response-area {
     background: #161b22;
     border-left: 4px solid #238636;
