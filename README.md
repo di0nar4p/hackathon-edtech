@@ -54,7 +54,7 @@ sql/seed.sql      Dados de exemplo
 
 **API (PHP 8 + MySQL):**
 1. Crie a base e execute `sql/schema.sql` e `sql/seed.sql`.
-2. Crie `api/config.php` com as constantes `DB_HOST`, `DB_NAME`, `DB_USER` e `DB_PASS`. Esse arquivo não é versionado.
+2. Copie `api/config.example.php` para `api/config.php` e preencha `DB_HOST`, `DB_NAME`, `DB_USER` e `DB_PASS`. O `config.php` não é versionado.
 3. Publique a pasta `api/` em um servidor PHP e ajuste `MCP_API_URL` no `script.js` para a URL publicada.
 4. O CORS aceita a origem do GitHub Pages e `localhost`. Para outro domínio, altere `ORIGEM_PERMITIDA` em `api/consulta.php`.
 
