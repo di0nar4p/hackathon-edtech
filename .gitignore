@@ -1,5 +1,9 @@
 credenciais-monroe-hostinger.md
+credenciais-vigiapoc-hostinger.md
 .gitignore
 .claude/
 docs/
 api/config.php
+.vscode
+/tests
+.htaccess
