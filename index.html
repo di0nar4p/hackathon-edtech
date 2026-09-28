@@ -19,6 +19,7 @@
             <a href="#modulos">Módulos</a>
             <a href="#score">Régua de Score</a>
             <a href="#simulador">Simulador de Risco</a>
+            <a href="#mcp">Arquitetura MCP</a>
             <a href="#cyber">Cyber & LGPD</a>
         </nav>
     </header>
@@ -104,6 +105,46 @@
                 </div>
             </div>
         </section>
+
+        <!-- SEÇÃO ARQUITETURA MCP -->
+<section id="mcp" class="section">
+    <div class="container">
+        <span class="badge">Integração em Tempo Real</span>
+        <h2>Arquitetura MCP (Model Context Protocol)</h2>
+        <p class="subtitle">Conectando o motor de IA do VigIA com os dados de frequência e desempenho acadêmico do aluno.</p>
+
+        <div class="mcp-grid">
+            <div class="mcp-card">
+                <h3>1. Conexão de Dados</h3>
+                <p>O protocolo MCP consulta com segurança os sistemas acadêmicos (frequência, notas e engajamento no LMS) em tempo real.</p>
+            </div>
+            <div class="mcp-card">
+                <h3>2. Análise Contextual</h3>
+                <p>A IA analisa o histórico do aluno sem armazenar dados sensíveis permanentemente, garantindo total conformidade com a LGPD.</p>
+            </div>
+            <div class="mcp-card">
+                <h3>3. Intervenção Ativa</h3>
+                <p>A equipe pedagógica faz perguntas em linguagem natural e recebe diagnósticos e ações recomendadas instantaneamente.</p>
+            </div>
+        </div>
+
+        <!-- DEMONSTRAÇÃO INTERATIVA -->
+        <div class="mcp-demo-box">
+            <h3>🤖 Teste a Consulta Inteligente via MCP</h3>
+            <p>Selecione uma pergunta de exemplo para simular a consulta da IA à base acadêmica:</p>
+            
+            <div class="demo-buttons">
+                <button type="button" onclick="simularMCP(1)">"Qual o risco do aluno Lucas Silva abandonar o curso?"</button>
+                <button type="button" onclick="simularMCP(2)">"Quais alunos tiveram queda de frequência na última semana?"</button>
+            </div>
+
+            <div id="mcp-response" class="mcp-response-area" style="display: none;">
+                <strong>Resposta da IA (dados consolidados via MCP):</strong>
+                <p id="mcp-text"></p>
+            </div>
+        </div>
+    </div>
+</section>
 
         <section id="cyber" class="section alt-bg">
             <h2>🔒 Camada de Segurança & Conformidade (LGPD)</h2>

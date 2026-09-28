@@ -67,3 +67,28 @@ document.addEventListener('DOMContentLoaded', () => {
         resultBox.classList.remove('hidden');
     });
 });
+
+function simularMCP(opcao) {
+    const responseBox = document.getElementById('mcp-response');
+    const textElement = document.getElementById('mcp-text');
+    
+    if (!responseBox || !textElement) return;
+
+    responseBox.style.display = 'block';
+    textElement.innerHTML = '<em>Consultando base de dados via protocolo MCP...</em>';
+
+    setTimeout(() => {
+        if (opcao === 1) {
+            textElement.innerHTML = `<strong>Risco do aluno Lucas Silva: ALTO (82%)</strong><br>
+            • Frequência nos últimos 15 dias: 45% (queda de 30%).<br>
+            • Última nota no LMS: 4.2 na disciplina de Algoritmos.<br>
+            💡 <em>Ação sugerida: Enviar alerta automático ao coordenador para agendar tutoria.</em>`;
+        } else if (opcao === 2) {
+            textElement.innerHTML = `<strong>Alunos com alerta de frequência esta semana: 3 encontrados</strong><br>
+            1. Mariana Costa — Análise de Sistemas (Faltas consecutivas: 4)<br>
+            2. Pedro Henrique — Engenharia (Faltas consecutivas: 3)<br>
+            3. Beatriz Lima — Gestão TI (Frequência geral abaixo de 70%)<br>
+            💡 <em>Alerta de intervenção preventiva disparado.</em>`;
+        }
+    }, 600);
+}
