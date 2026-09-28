@@ -175,77 +175,8 @@ nav a:hover {
 .orange { border-color: #db6d28; }
 .red { border-color: #f85149; }
 
-.simulator-box {
-    background-color: #161b22;
-    padding: 2rem;
-    border-radius: 12px;
-    border: 1px solid #30363d;
-    max-width: 600px;
-    margin: 2rem auto 0;
-}
-
-.form-group {
-    margin-bottom: 1.2rem;
-    text-align: left;
-}
-
-.form-group label {
-    display: block;
-    margin-bottom: 0.5rem;
-    color: #c9d1d9;
-}
-
-.form-group input, .form-group select {
-    width: 100%;
-    padding: 0.8rem;
-    background-color: #0d1117;
-    border: 1px solid #30363d;
-    border-radius: 6px;
-    color: #ffffff;
-    font-size: 1rem;
-}
-
-.result-box {
-    margin-top: 1.5rem;
-    padding: 1.5rem;
-    border-radius: 8px;
-    background-color: #21262d;
-    border: 1px solid #30363d;
-}
-
-.hidden {
-    display: none;
-}
-
-.security-note {
-    display: block;
-    margin-top: 15px;
-    font-size: 0.8rem;
-    color: #8b949e;
-}
-
 #cyber .card {
     border-top: 3px solid #00f2fe;
-}
-
-.result-box.bg-green {
-    border-left: 6px solid #2ea44f;
-    background: rgba(46, 164, 79, 0.1);
-}
-
-.result-box.bg-yellow {
-    border-left: 6px solid #d29922;
-    background: rgba(210, 153, 34, 0.1);
-}
-
-.result-box.bg-orange {
-    border-left: 6px solid #db6d28;
-    background: rgba(219, 109, 40, 0.1);
-}
-
-.result-box.bg-red {
-    border-left: 6px solid #f85149;
-    background: rgba(248, 81, 73, 0.1);
 }
 
 footer {
@@ -257,11 +188,20 @@ footer {
 }
 
 /* Seção MCP */
+#mcp .container {
+    text-align: center;
+}
+
+#mcp .container h2 {
+    margin-top: 1.5rem;
+}
+
 .mcp-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
     margin-top: 30px;
+    text-align: left;
 }
 
 .mcp-card {
@@ -309,6 +249,46 @@ footer {
     background: #30363d;
     border-color: #58a6ff;
     color: #ffffff;
+}
+
+.demo-query {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 20px 0;
+}
+
+.demo-query input {
+    flex: 1;
+    min-width: 260px;
+    max-width: 480px;
+    background: #0d1117;
+    color: #c9d1d9;
+    border: 1px solid #30363d;
+    padding: 10px 14px;
+    border-radius: 6px;
+    font-size: 0.95rem;
+}
+
+.demo-query input:focus {
+    outline: none;
+    border-color: #58a6ff;
+}
+
+.demo-query button {
+    background: #238636;
+    color: #ffffff;
+    border: 1px solid #2ea043;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    transition: all 0.2s ease;
+}
+
+.demo-query button:hover {
+    background: #2ea043;
 }
 
 .mcp-response-area {
