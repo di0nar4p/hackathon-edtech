@@ -3,139 +3,168 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>vigiIA — Plataforma de Prevenção à Evasão</title>
+    <title>vigiIA — Prevenção Ativa da Evasão Universitária</title>
+    <!-- Politica de Segurança de Conteúdo (CSP) para mitigar XSS -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self' 'unsafe-inline';">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <div class="logo">vigi<span>IA</span></div>
+    <header class="navbar">
+        <div class="logo">
+            <span class="shield">🛡️</span> vigi<span class="highlight">IA</span>
+        </div>
         <nav>
             <a href="#problema">O Problema</a>
             <a href="#modulos">Módulos</a>
             <a href="#score">Régua de Score</a>
-            <a href="#demo">Simulador de Risco</a>
+            <a href="#simulador">Simulador de Risco</a>
+            <a href="#cyber">Cyber & LGPD</a>
         </nav>
-        <a href="#demo" class="btn-nav">Acessar Demo</a>
     </header>
 
     <main>
         <section class="hero">
-            <span class="badge">Inteligência Educacional Anti-Evasão</span>
+            <span class="badge">Inteligência Educacional Anti-Evasão & Zero-Trust</span>
             <h1>Prevenção Ativa da Evasão Universitária</h1>
-            <p>Monitoramento contínuo em 5 dimensões acadêmicas para identificar e intervir antes que o aluno abandone o curso[cite: 11, 13, 15].</p>
-            <div class="hero-actions">
-                <a href="#modulos" class="btn-primary">Ver os 5 Módulos</a>
-                <a href="#demo" class="btn-secondary">Testar Alerta de IA</a>
+            <p>Monitoramento contínuo e seguro em 5 dimensões acadêmicas para identificar e intervir antes que o aluno abandone o curso, com proteção estrita de dados sensíveis (LGPD).</p>
+            <div class="cta-group">
+                <a href="#modulos" class="btn btn-primary">Ver os Módulos</a>
+                <a href="#simulador" class="btn btn-secondary">Testar Alerta de IA</a>
             </div>
         </section>
 
         <section id="problema" class="section">
-            <div class="section-tag">01 — O CENÁRIO</div>
-            <div class="stat-banner">
-                <span class="highlight-num">1 em 4</span>
-                <h2>alunos abandona o ensino superior no Brasil[cite: 11].</h2>
-            </div>
-            <p class="description">O vigiIA atua integrando dados do LMS, ERP e AVA para gerar alertas preditivos antes da desistência do estudante[cite: 13, 15].</p>
-        </section>
-
-        <section id="modulos" class="section">
-            <div class="section-tag">02 — A SOLUÇÃO MODULAR</div>
-            <h2>Plataforma em 5 Frentes[cite: 12]</h2>
+            <h2>O Desafio do Ensino Superior</h2>
             <div class="grid-cards">
                 <div class="card">
-                    <span class="card-num">01</span>
+                    <h3>25%+ Taxa de Evasão</h3>
+                    <p>No Brasil, 1 em cada 4 estudantes abandona a faculdade no 1º ano. A retenção preventiva é o maior gargalo das IES.</p>
+                </div>
+                <div class="card">
+                    <h3>Ação Reativa Tardia</h3>
+                    <p>As instituições só descobrem a desistência quando o aluno tranca a matrícula ou para de pagar as mensalidades.</p>
+                </div>
+                <div class="card">
+                    <h3>Radar Silencioso</h3>
+                    <p>O vigiIA analisa acessos, notas, microlearning e engajamento no AVA sem criar atrito ou sobrecarregar o aluno.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="modulos" class="section alt-bg">
+            <h2>5 Frentes de Intervenção Preventiva</h2>
+            <div class="grid-modulos">
+                <div class="card-modulo">
+                    <span class="mod-num">01</span>
                     <h3>Diagnóstico Cognitivo</h3>
-                    <p>Mapeamento de perfil e estilo de aprendizagem no ingresso[cite: 12].</p>
+                    <p>Mapeamento de perfil e lacunas na entrada do curso.</p>
                 </div>
-                <div class="card">
-                    <span class="card-num">02</span>
+                <div class="card-modulo">
+                    <span class="mod-num">02</span>
                     <h3>Trilha Personalizada</h3>
-                    <p>Itinerários adaptativos focados nas lacunas do estudante[cite: 12].</p>
+                    <p>Itinerários adaptativos focados nas dificuldades individuais.</p>
                 </div>
-                <div class="card">
-                    <span class="card-num">03</span>
+                <div class="card-modulo">
+                    <span class="mod-num">03</span>
                     <h3>Microlearning Adaptativo</h3>
-                    <p>Doses diárias e focadas de conteúdo para engajamento rápido[cite: 12].</p>
+                    <p>Doses diárias de aprendizado para alto engajamento.</p>
                 </div>
-                <div class="card">
-                    <span class="card-num">04</span>
+                <div class="card-modulo">
+                    <span class="mod-num">04</span>
                     <h3>Simulados Inteligentes</h3>
-                    <p>Avaliações contínuas para medir retração e compreensão[cite: 12].</p>
+                    <p>Avaliações contínuas de fixação de conhecimento.</p>
                 </div>
-                <div class="card card-featured">
-                    <span class="card-num">05</span>
-                    <h3>Vigilância Institucional ⚡</h3>
-                    <p>Radar contínuo sem atrito, integrado ao ecossistema da faculdade[cite: 12, 13, 15].</p>
+                <div class="card-modulo">
+                    <span class="mod-num">05</span>
+                    <h3>Vigilância Institucional</h3>
+                    <p>Alertas em tempo real para coordenação e tutores.</p>
                 </div>
             </div>
         </section>
 
         <section id="score" class="section">
-            <div class="section-tag">03 — MONITORAMENTO</div>
-            <h2>Régua Composta de Score[cite: 16]</h2>
-            <div class="grid-score">
+            <h2>Régua de Score Composto de Risco</h2>
+            <div class="score-container">
                 <div class="score-card green">
-                    <div class="score-val">76 – 100</div>
-                    <h4>Risco Baixo</h4>
-                    <p>Monitoramento padrão regular[cite: 16].</p>
+                    <h4>76 – 100</h4>
+                    <p><strong>Verde:</strong> Monitoramento Padrão</p>
                 </div>
                 <div class="score-card yellow">
-                    <div class="score-val">51 – 75</div>
-                    <h4>Risco Médio</h4>
-                    <p>Atenção preventiva recomendada[cite: 16].</p>
+                    <h4>51 – 75</h4>
+                    <p><strong>Amarelo:</strong> Atenção Preventiva</p>
                 </div>
                 <div class="score-card orange">
-                    <div class="score-val">41 – 50</div>
-                    <h4>Risco Alto</h4>
-                    <p>Intervenção de tutoria indicada[cite: 16].</p>
+                    <h4>41 – 50</h4>
+                    <p><strong>Laranja:</strong> Intervenção Recomendada</p>
                 </div>
                 <div class="score-card red">
-                    <div class="score-val">0 – 40</div>
-                    <h4>Crítico</h4>
-                    <p>Intervenção imediata da coordenação[cite: 16].</p>
+                    <h4>0 – 40</h4>
+                    <p><strong>Vermelho:</strong> Intervenção Crítica Imediata</p>
                 </div>
             </div>
         </section>
 
-        <!-- DEMO INTERATIVA (O toque do teu projeto original) -->
-        <section id="demo" class="section demo-section">
-            <div class="section-tag">04 — DEMONSTRAÇÃO PRÁTICA</div>
-            <h2>Simulador de Diagnóstico vigiIA</h2>
-            <p>Selecione a situação atual do aluno para simular o alerta em tempo real:</p>
+        <section id="cyber" class="section alt-bg">
+            <h2>🔒 Camada de Segurança & Conformidade (LGPD)</h2>
+            <div class="grid-cards">
+                <div class="card">
+                    <h3>Proteção Zero-Trust</h3>
+                    <p>Arquitetura projetada para verificar continuamente qualquer acesso aos dados analíticos de retenção.</p>
+                </div>
+                <div class="card">
+                    <h3>Mascaramento de Dados (Data Masking)</h3>
+                    <p>Nomes e RAs de estudantes são anonimizados no front-end para evitar vazamentos de dados pessoais (LGPD).</p>
+                </div>
+                <div class="card">
+                    <h3>Sanitização de Input & CSP</h3>
+                    <p>Entradas de dados são limpas no cliente contra ataques XSS e executadas sob rigoroso protocolo de segurança de conteúdo.</p>
+                </div>
+            </div>
+        </section>
 
-            <div class="demo-box">
+        <section id="simulador" class="section">
+            <h2>Simulador de Diagnóstico e Risco (Front-End)</h2>
+            <p>Selecione os parâmetros e o nome do estudante para avaliar o diagnóstico com validação de segurança:</p>
+            <div class="simulator-box">
                 <div class="form-group">
-                    <label>Frequência / Acesso ao AVA:</label>
-                    <select id="frequencia">
-                        <option value="10">Normal (Acesso diário)</option>
-                        <option value="5">Baixa (Sem acesso há 7 dias)</option>
+                    <label for="student-name">Nome do Estudante (LGPD Ativo):</label>
+                    <input type="text" id="student-name" placeholder="Ex: Maria Oliveira" value="Maria Oliveira">
+                </div>
+                <div class="form-group">
+                    <label for="freq">Frequência no LMS / AVA:</label>
+                    <select id="freq">
+                        <option value="100">Normal (Acessos diários)</option>
+                        <option value="50">Baixa (1 a 2 acessos/semana)</option>
                         <option value="0">Nula (Sem acesso há 15+ dias)</option>
                     </select>
                 </div>
                 <div class="form-group">
-                    <label>Desempenho nas Avaliações:</label>
-                    <select id="notas">
-                        <option value="10">Notas acima da média (7.0+)</option>
-                        <option value="4">Notas abaixo da média (4.0 - 6.9)</option>
-                        <option value="0">Notas críticas (< 4.0)</option>
+                    <label for="notes">Desempenho em Exercícios:</label>
+                    <select id="notes">
+                        <option value="100">Alto (Acima de 80%)</option>
+                        <option value="50">Médio (50% a 79%)</option>
+                        <option value="0">Crítico (Abaixo de 50%)</option>
                     </select>
                 </div>
-
-                <button onclick="analisarRisco()" class="btn-primary">Analisar Risco do Aluno</button>
-
-                <div id="resultado-alerta" class="resultado-box hidden">
-                    <h3 id="status-titulo">---</h3>
-                    <p id="status-desc">---</p>
+                <button id="btn-analyze" class="btn btn-primary">Analisar Risco do Aluno</button>
+                
+                <div id="result-box" class="result-box hidden">
+                    <h3 id="result-title">Resultado</h3>
+                    <p id="student-ident"><strong>Estudante:</strong> <span id="student-display"></span></p>
+                    <p id="result-score">Score: 0</p>
+                    <p id="result-status">Status: -</p>
+                    <p id="result-action">Ação Recomendada: -</p>
+                    <small class="security-note">🔒 Transmissão protegida com sanitização de dados contra injeção de scripts (XSS).</small>
                 </div>
             </div>
         </section>
     </main>
 
     <footer>
-        <p>© 2026 vigiIA — Sistema Inteligente de Prevenção à Evasão</p>
+        <p>&copy; 2026 vigiIA — Sistema Inteligente e Seguro de Prevenção à Evasão. Hackathon EdTech.</p>
     </footer>
 
     <script src="script.js"></script>
