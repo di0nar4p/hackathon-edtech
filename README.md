@@ -1,4 +1,4 @@
-# 🛡️ vigiIA — Sistema Inteligente de Prevenção à Evasão Universitária
+# 🛡️ vigIA — Sistema Inteligente de Prevenção à Evasão Universitária
 
 Plataforma Web Front-End desenvolvida para o **Hackathon EdTech**. O **vigiIA** atua como um radar preditivo silencioso no ensino superior, identificando sinais de desengajamento acadêmico e gerando intervenções preventivas automáticas antes que o aluno abandone o curso.
 
