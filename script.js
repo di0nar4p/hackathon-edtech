@@ -68,27 +68,51 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-function simularMCP(opcao) {
+const MCP_API_URL = 'https://mintcream-lion-144816.hostingersite.com/consulta.php';
+
+async function consultarMCP(pergunta) {
     const responseBox = document.getElementById('mcp-response');
     const textElement = document.getElementById('mcp-text');
-    
+
     if (!responseBox || !textElement) return;
 
     responseBox.style.display = 'block';
     textElement.innerHTML = '<em>Consultando base de dados via protocolo MCP...</em>';
 
-    setTimeout(() => {
-        if (opcao === 1) {
-            textElement.innerHTML = `<strong>Risco do aluno Lucas Silva: ALTO (82%)</strong><br>
-            • Frequência nos últimos 15 dias: 45% (queda de 30%).<br>
-            • Última nota no LMS: 4.2 na disciplina de Algoritmos.<br>
-            💡 <em>Ação sugerida: Enviar alerta automático ao coordenador para agendar tutoria.</em>`;
-        } else if (opcao === 2) {
-            textElement.innerHTML = `<strong>Alunos com alerta de frequência esta semana: 3 encontrados</strong><br>
-            1. Mariana Costa — Análise de Sistemas (Faltas consecutivas: 4)<br>
-            2. Pedro Henrique — Engenharia (Faltas consecutivas: 3)<br>
-            3. Beatriz Lima — Gestão TI (Frequência geral abaixo de 70%)<br>
-            💡 <em>Alerta de intervenção preventiva disparado.</em>`;
+    try {
+        const resposta = await fetch(MCP_API_URL, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ pergunta }),
+        });
+
+        const dados = await resposta.json();
+
+        if (!resposta.ok) {
+            textElement.innerHTML = `<em>${dados.erro ?? 'Não foi possível consultar a base agora.'}</em>`;
+            return;
         }
-    }, 600);
+
+        textElement.innerHTML = dados.resposta.replace(/\n/g, '<br>');
+    } catch (erro) {
+        textElement.innerHTML = '<em>Não foi possível conectar à base de dados no momento. Tente novamente em instantes.</em>';
+    }
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+    const inputPergunta = document.getElementById('mcp-pergunta');
+    const btnPerguntar = document.getElementById('mcp-perguntar');
+
+    if (!inputPergunta || !btnPerguntar) return;
+
+    const disparar = () => {
+        const pergunta = inputPergunta.value.trim();
+        if (pergunta === '') return;
+        consultarMCP(pergunta);
+    };
+
+    btnPerguntar.addEventListener('click', disparar);
+    inputPergunta.addEventListener('keydown', (evento) => {
+        if (evento.key === 'Enter') disparar();
+    });
+});
