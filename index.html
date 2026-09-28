@@ -131,11 +131,16 @@
         <!-- DEMONSTRAÇÃO INTERATIVA -->
         <div class="mcp-demo-box">
             <h3>🤖 Teste a Consulta Inteligente via MCP</h3>
-            <p>Selecione uma pergunta de exemplo para simular a consulta da IA à base acadêmica:</p>
-            
-            <div class="demo-buttons">
-                <button type="button" onclick="simularMCP(1)">"Qual o risco do aluno Lucas Silva abandonar o curso?"</button>
-                <button type="button" onclick="simularMCP(2)">"Quais alunos tiveram queda de frequência na última semana?"</button>
+            <p>Digite uma pergunta em linguagem natural sobre um aluno cadastrado na base acadêmica:</p>
+
+            <div class="demo-query">
+                <input
+                    type="text"
+                    id="mcp-pergunta"
+                    placeholder='Ex: "Qual o risco do aluno Lucas Silva abandonar o curso?"'
+                    autocomplete="off"
+                >
+                <button type="button" id="mcp-perguntar">Perguntar</button>
             </div>
 
             <div id="mcp-response" class="mcp-response-area" style="display: none;">
