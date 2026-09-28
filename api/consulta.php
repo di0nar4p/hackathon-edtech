@@ -12,8 +12,10 @@ const ORIGEM_PERMITIDA = 'https://peruzzo-dot.github.io';
 header('Content-Type: application/json; charset=utf-8');
 
 $origemRequisicao = $_SERVER['HTTP_ORIGIN'] ?? '';
-if ($origemRequisicao === ORIGEM_PERMITIDA) {
-    header('Access-Control-Allow-Origin: ' . ORIGEM_PERMITIDA);
+$origemEhAmbienteLocal = (bool) preg_match('#^https?://(localhost|127\.0\.0\.1)(:\d+)?$#', $origemRequisicao);
+
+if ($origemRequisicao === ORIGEM_PERMITIDA || $origemEhAmbienteLocal) {
+    header('Access-Control-Allow-Origin: ' . $origemRequisicao);
 }
 header('Access-Control-Allow-Methods: POST, OPTIONS');
 header('Access-Control-Allow-Headers: Content-Type');
@@ -64,13 +66,38 @@ if ($intencao === 'risco' && $nomeAluno !== null) {
     $stmt->execute(['nome' => $nomeAluno]);
     $aluno = $stmt->fetch(PDO::FETCH_ASSOC);
 
+    $classificacoes = [
+        'verde' => [
+            'titulo' => '🟢 Risco Baixo (Verde)',
+            'status' => 'Estudante engajado e adaptado.',
+            'acao' => 'Manter monitoramento padrão e enviar conteúdos de nivelamento avançado.',
+        ],
+        'amarelo' => [
+            'titulo' => '🟡 Risco Médio (Amarelo)',
+            'status' => 'Sinais iniciais de desengajamento acadêmico.',
+            'acao' => 'Enviar pílulas de Microlearning diárias e reforço de trilha personalizada.',
+        ],
+        'laranja' => [
+            'titulo' => '🟠 Risco Alto (Laranja)',
+            'status' => 'Frequência ou notas em queda vertiginosa.',
+            'acao' => 'Notificar o tutor acadêmico para agendamento de mentoria de apoio.',
+        ],
+        'vermelho' => [
+            'titulo' => '🔴 ALERTA CRÍTICO DE EVASÃO (Vermelho)',
+            'status' => 'Ausência prolongada e desempenho crítico no AVA.',
+            'acao' => 'Intervenção urgente da coordenação e apoio psicológico/social via canal seguro.',
+        ],
+    ];
+
+    $classificacao = $classificacoes[$aluno['nivel_risco']];
+
     $resposta = sprintf(
-        "Risco do aluno %s: %s (score %d/100).\nFrequência: %.1f%%. Média de notas: %.1f.",
+        "%s\nEstudante: %s\nScore Composto de Engajamento: %d / 100\nStatus: %s\nAção Recomendada: %s",
+        $classificacao['titulo'],
         $aluno['nome'],
-        strtoupper($aluno['nivel_risco']),
         $aluno['score_risco'],
-        $aluno['frequencia_pct'],
-        $aluno['media_notas']
+        $classificacao['status'],
+        $classificacao['acao']
     );
 } elseif ($intencao === 'frequencia') {
     $alunos = $pdo->query(
