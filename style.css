@@ -1,9 +1,227 @@
-/* Estilos para o Módulo de Cyber e LGPD */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #0d1117;
+    color: #e6edf3;
+    line-height: 1.6;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2rem 5%;
+    background-color: rgba(13, 17, 23, 0.9);
+    border-bottom: 1px solid #30363d;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.highlight {
+    color: #00f2fe;
+}
+
+nav a {
+    color: #8b949e;
+    text-decoration: none;
+    margin-left: 1.5rem;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #00f2fe;
+}
+
+.hero {
+    text-align: center;
+    padding: 5rem 1rem;
+    background: radial-gradient(circle at center, #161b22 0%, #0d1117 100%);
+}
+
+.badge {
+    background-color: rgba(0, 242, 254, 0.1);
+    color: #00f2fe;
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    border: 1px solid rgba(0, 242, 254, 0.3);
+}
+
+.hero h1 {
+    font-size: 2.8rem;
+    margin: 1.5rem 0 1rem;
+    color: #ffffff;
+}
+
+.hero p {
+    max-width: 650px;
+    margin: 0 auto 2rem;
+    color: #8b949e;
+    font-size: 1.1rem;
+}
+
+.cta-group {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.btn {
+    padding: 0.8rem 1.8rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    border: none;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #00f2fe 0%, #4facfe 100%);
+    color: #0d1117;
+}
+
+.btn-secondary {
+    background-color: #21262d;
+    color: #c9d1d9;
+    border: 1px solid #30363d;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 242, 254, 0.2);
+}
+
+.section {
+    padding: 4rem 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.alt-bg {
+    background-color: #161b22;
+    border-radius: 12px;
+}
+
+.section h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 2.5rem;
+}
+
+.grid-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.card {
+    background-color: #21262d;
+    padding: 1.8rem;
+    border-radius: 10px;
+    border: 1px solid #30363d;
+}
+
+.grid-modulos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.2rem;
+}
+
+.card-modulo {
+    background-color: #0d1117;
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid #30363d;
+    position: relative;
+}
+
+.mod-num {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #00f2fe;
+    background: rgba(0, 242, 254, 0.1);
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+}
+
+.score-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+}
+
+.score-card {
+    padding: 1.5rem;
+    border-radius: 8px;
+    text-align: center;
+    border-left: 5px solid;
+    background-color: #21262d;
+}
+
+.green { border-color: #2ea44f; }
+.yellow { border-color: #d29922; }
+.orange { border-color: #db6d28; }
+.red { border-color: #f85149; }
+
+.simulator-box {
+    background-color: #161b22;
+    padding: 2rem;
+    border-radius: 12px;
+    border: 1px solid #30363d;
+    max-width: 600px;
+    margin: 2rem auto 0;
+}
+
+.form-group {
+    margin-bottom: 1.2rem;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #c9d1d9;
+}
+
+.form-group input, .form-group select {
+    width: 100%;
+    padding: 0.8rem;
+    background-color: #0d1117;
+    border: 1px solid #30363d;
+    border-radius: 6px;
+    color: #ffffff;
+    font-size: 1rem;
+}
+
+.result-box {
+    margin-top: 1.5rem;
+    padding: 1.5rem;
+    border-radius: 8px;
+    background-color: #21262d;
+    border: 1px solid #30363d;
+}
+
+.hidden {
+    display: none;
+}
+
 .security-note {
     display: block;
     margin-top: 15px;
     font-size: 0.8rem;
-    color: #a0aec0;
+    color: #8b949e;
 }
 
 #cyber .card {
@@ -11,21 +229,29 @@
 }
 
 .result-box.bg-green {
-    border-left: 6px solid #48bb78;
-    background: rgba(72, 187, 120, 0.1);
+    border-left: 6px solid #2ea44f;
+    background: rgba(46, 164, 79, 0.1);
 }
 
 .result-box.bg-yellow {
-    border-left: 6px solid #ecc94b;
-    background: rgba(236, 201, 75, 0.1);
+    border-left: 6px solid #d29922;
+    background: rgba(210, 153, 34, 0.1);
 }
 
 .result-box.bg-orange {
-    border-left: 6px solid #ed8936;
-    background: rgba(237, 137, 54, 0.1);
+    border-left: 6px solid #db6d28;
+    background: rgba(219, 109, 40, 0.1);
 }
 
 .result-box.bg-red {
-    border-left: 6px solid #f56565;
-    background: rgba(245, 101, 101, 0.1);
+    border-left: 6px solid #f85149;
+    background: rgba(248, 81, 73, 0.1);
+}
+
+footer {
+    text-align: center;
+    padding: 2rem;
+    border-top: 1px solid #30363d;
+    color: #8b949e;
+    font-size: 0.9rem;
 }
