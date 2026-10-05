@@ -32,6 +32,7 @@ async function consultarMCP(pergunta) {
 document.addEventListener('DOMContentLoaded', () => {
     const inputPergunta = document.getElementById('mcp-pergunta');
     const btnPerguntar = document.getElementById('mcp-perguntar');
+    const botoesExemplo = document.querySelectorAll('.demo-exemplo');
 
     if (!inputPergunta || !btnPerguntar) return;
 
@@ -44,5 +45,12 @@ document.addEventListener('DOMContentLoaded', () => {
     btnPerguntar.addEventListener('click', disparar);
     inputPergunta.addEventListener('keydown', (evento) => {
         if (evento.key === 'Enter') disparar();
+    });
+
+    botoesExemplo.forEach((botao) => {
+        botao.addEventListener('click', () => {
+            inputPergunta.value = botao.dataset.pergunta;
+            disparar();
+        });
     });
 });
