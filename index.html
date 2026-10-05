@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>vigIA — Prevenção Ativa da Evasão Universitária</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=5">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -148,7 +148,12 @@
         <!-- DEMONSTRAÇÃO INTERATIVA -->
         <div class="mcp-demo-box">
             <h3>🤖 Teste a Consulta Inteligente via MCP</h3>
-            <p>Digite uma pergunta em linguagem natural sobre um aluno cadastrado na base acadêmica:</p>
+            <p>Digite uma pergunta em linguagem natural sobre um aluno cadastrado na base acadêmica, ou escolha um exemplo abaixo:</p>
+
+            <div class="demo-buttons">
+                <button type="button" class="demo-exemplo" data-pergunta="Qual o risco do aluno Lucas Silva abandonar o curso?">"Qual o risco do aluno Lucas Silva abandonar o curso?"</button>
+                <button type="button" class="demo-exemplo" data-pergunta="Quais alunos tiveram queda de frequência na última semana?">"Quais alunos tiveram queda de frequência na última semana?"</button>
+            </div>
 
             <div class="demo-query">
                 <input
@@ -174,6 +179,6 @@
         <p>&copy; 2026 vigiIA — Sistema Inteligente e Seguro de Prevenção à Evasão. Hackathon EdTech.</p>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="script.js?v=5"></script>
 </body>
 </html>
